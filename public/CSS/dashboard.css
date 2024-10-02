@@ -1,0 +1,502 @@
+:root {
+    --black: #181722;
+    --white: #f0f0f0;
+    --box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    --hover-color: #FFDBB5;
+}
+
+/* General resets and typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 8rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: var(--white);
+    border-radius: 5rem;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding: 1.4rem 7%;
+    z-index: 1000;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+header.scrolled {
+    background-color: rgba(192, 181, 181, 0.5);
+    box-shadow: var(--box-shadow);
+}
+
+header .bakery-img {
+    width: 60px;
+    border-radius: 100%;
+    border: 2px rgba(129, 160, 207, 0.2);
+    margin: -6px -80px 0;
+}
+
+header .navbar a {
+    position: relative;
+    font-size: 1.6rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 3rem;
+}
+
+header .navbar a:hover {
+    color: var(--hover-color);
+}
+
+header.scrolled .navbar a:hover {
+    color: var(--hover-color);
+}
+
+header.scrolled .navbar a {
+    color: var(--white);
+}
+
+header .navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    transform-origin: right;
+    background: var(--white);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+header.scrolled .navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    transform-origin: right;
+    background: var(--white);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+header .navbar a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header .navbar .btnLogin {
+    border: 2px solid var(--white);
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    background: transparent;
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header .navbar .btnLogin:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+header.scrolled .navbar .btnLogin {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+header.scrolled .navbar .btnLogin:hover {
+    border-color: #604b96;
+    background: #604b96;
+    color: var(--white);
+}
+
+
+section {
+    min-height: 100vh;
+    width: 150%;
+    padding: 50px 0;
+}
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-image: url(background.jpg);
+    background-size: cover; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.section-with-overlay {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.section-with-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.home .homeContent {
+    width: 70%;
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    text-align: center; 
+    padding: 4rem;
+}
+
+.home .homeContent h2 {
+    font-size: 8rem;
+    color: var(--white);
+    text-shadow: var(--box-shadow);
+    z-index: 999;
+}
+
+.home .homeContent p{
+    font-weight: bolder;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--white);
+    z-index: 999;
+}
+
+.home .homeContent .home-btn {
+    height: 3rem;
+    z-index: 999;
+}
+
+.home .homeContent .home-btn button{
+    margin-top: 20px;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: 3px solid var(--white);
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 600;
+    padding: .7rem 2.4rem;
+    transition: .6s ease;
+}
+
+.home .home-btn button:hover {
+    background: var(--hover-color);
+    color: var(--black);
+}
+
+/* Product Page CSS */
+section{
+    padding: 2rem 7%;
+}
+
+.product-section {
+    background-color: var(--white);
+    position: relative;
+    width: 100%;
+    height: 550px;
+}
+
+.product-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.product-section h2 {
+    font-size: 4.5rem;
+    font-weight: bolder;
+    margin: 5rem;
+    line-height: 7rem;
+    color: var(--white);
+    text-shadow: var(--box-shadow);
+    padding-left: 310px;
+    position: relative;
+    z-index: 2;
+}
+
+.product-section .content .product-grid {
+    width: 90%;
+    display: flex;
+    gap: 30px;
+    padding: 2px 25px;
+    flex-wrap: wrap;
+}
+
+.product-section .content .product-grid .product {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFDBB5;
+    text-align: center;
+    border-radius: 40px;
+    width: 325px;
+    height: 250px;
+    position: relative;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+    overflow: hidden;
+    gap: 2rem;
+
+}
+
+.product-section .content .product-grid img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    box-shadow: 0 0 8px rgba(165, 165, 165, 0.5);
+    transition: transform .5s ease;
+    z-index: 2;
+}
+
+.product-section .content .product-grid .product .image-text {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: .5s;
+    z-index: 3;
+}
+.product-section .content .product-grid .product .image-text h3 {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.product-section .content .product-grid .product .image-text:hover {
+    opacity: 1;
+}
+
+.product .image-text {
+    transform: translateY(25px);
+    transition: transform 0.5s;
+}
+
+.product:hover > * {
+    transform: translateY(0);
+}
+
+
+/* Blogs Page CSS */
+.blogs {
+    background: url('backGround.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 7rem 4rem;
+}
+
+.swiper-wrapper {
+    padding-left: 0; 
+    margin: 0 auto; 
+    width: 100%;
+}
+
+.blogs .blogs-row {
+    justify-content: center;
+    width: 100%;
+}
+
+.blogs .swiper-slide {
+    display: flex;
+    justify-content: center;
+    margin-right: 15px; 
+    max-width: 80%; 
+    padding: 0 15px;
+    box-sizing: border-box; 
+}
+
+.blogs .blogs-row .box {
+    display: flex;
+    align-items: center;
+    background-color: #6A9C89;
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 120px;
+    margin-right: 90px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.blogs .blogs-row .box .img {
+    flex: 1;
+    max-width: 50%; 
+}
+
+.blogs .blogs-row .box .img img {
+    width: 100%;
+    object-fit: cover;
+    padding: 2rem; 
+}
+
+.blogs .blogs-row .box .content {
+    flex: 1;
+    padding: 2rem;
+    text-align: left;
+}
+
+.blogs .blogs-row .box .content h3 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.blogs .blogs-row .box .content p {
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.blogs .blogs-row .box .content .btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.blogs .blogs-row .box .content .btn:hover {
+    background-color: dimgray;
+}
+
+.swiper-pagination {
+    position: absolute;   
+    bottom: 20px;         
+    left: 50%;            
+    transform: translateX(-16%); 
+    z-index: 10;          
+    display: flex;        
+    justify-content: center;
+}
+
+
+/* Contact Page CSS */
+
+.footer {
+    background-color: #BBAB8C;
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3.5rem;
+    padding: 2rem 1rem;
+}
+
+.footer .box-container .mainBox .content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    z-index: 999;
+}
+
+.footer .box-container .mainBox .content h1 {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.footer .box-container .box h3 {
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+.footer .box-container .box a i {
+    padding-right: .5rem;
+    color: #6C4E31;
+    transition: .5s ease;
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 1.2rem;
+}
+
+.footer .share {
+    padding: .3rem 0;
+    text-align: center;
+}
+
+.footer .share a {
+    height: 3.5rem;
+    width: 3.5rem;
+    line-height: 3.5rem;
+    font-size: 1.9rem;
+    color: var(--black);
+    background: var(--white);
+    margin: -10px .3rem;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.footer .share a:hover {
+    background: dimgrey;
+    color: var(--white);
+}
+
+.footer .credit {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: var(--black);
+    text-align: center;
+}
