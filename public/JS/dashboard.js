@@ -44,13 +44,13 @@ var swiper = new Swiper(".blogs-row", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  spaceBetween: 30,
+  spaceBetween: 10,
   breakpoints: {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 2,
     },
     768: {
-      slidesPerView: 1,
+      slidesPerView: 2,
     },
     1024: {
       slidesPerView: 2,

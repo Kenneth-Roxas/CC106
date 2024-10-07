@@ -2,10 +2,8 @@
     --black: #181722;
     --white: #f0f0f0;
     --box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-    --hover-color: #FFDBB5;
 }
 
-/* General resets and typography */
 * {
     margin: 0;
     padding: 0;
@@ -14,8 +12,9 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62%;
     overflow-x: hidden;
+    scroll-padding-top: 7rem;
     scroll-behavior: smooth;
 }
 
@@ -32,92 +31,61 @@ html::-webkit-scrollbar-thumb{
 }
 
 header {
-    position: fixed;
-    width: 100%;
-    padding: 1.4rem 7%;
-    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
     background-color: transparent;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    transition: background-color 0.5s, box-shadow 0.5s;
+    justify-content: space-between;
+    position: fixed;
+    padding: 10px 10px;
+    z-index: 999;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 header.scrolled {
     background-color: rgba(192, 181, 181, 0.5);
-    box-shadow: var(--box-shadow);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 header .bakery-img {
     width: 60px;
     border-radius: 100%;
     border: 2px rgba(129, 160, 207, 0.2);
-    margin: -6px -80px 0;
 }
 
 header .navbar a {
     position: relative;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    margin-right: 3rem;
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    margin-right: 3rem;
 }
 
 header .navbar a:hover {
     color: var(--hover-color);
 }
 
-header.scrolled .navbar a:hover {
-    color: var(--hover-color);
-}
 
 header.scrolled .navbar a {
     color: var(--white);
 }
 
-header .navbar a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    transform-origin: right;
-    background: var(--white);
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: transform .5s;
-}
-
-header.scrolled .navbar a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    transform-origin: right;
-    background: var(--white);
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: transform .5s;
-}
-
-header .navbar a:hover::after{
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
 header .navbar .btnLogin {
-    border: 2px solid var(--white);
-    padding: 1rem 2rem;
-    border-radius: 100px;
+    width: 100px;
+    height: 40px;
     background: transparent;
+    border: 2px solid var(--white);
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.5rem;
     color: var(--white);
     font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.5s, color 0.5s;
+    margin-left: 10px;
+    transition: 1s ease;
 }
 
 header .navbar .btnLogin:hover {
@@ -146,11 +114,13 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100vw; 
+    min-height: 500px;
     background-image: url(background.jpg);
     background-size: cover; 
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -168,6 +138,7 @@ section {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
+    z-index: 1;
 }
 
 .home .homeContent {
@@ -184,11 +155,14 @@ section {
 
 .home .homeContent h2 {
     font-size: 8rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    line-height: 7rem;
     color: var(--white);
     text-shadow: var(--box-shadow);
     z-index: 999;
+    
 }
-
 .home .homeContent p{
     font-weight: bolder;
     font-size: 2rem;
@@ -203,24 +177,25 @@ section {
 }
 
 .home .homeContent .home-btn button{
-    margin-top: 20px;
-    width: 100%;
-    height: 45px;
+    margin-top: 40px;
+    width: 140px;
+    height: 50px;
     background: transparent;
     border: 3px solid var(--white);
     outline: none;
-    border-radius: 20px;
+    border-radius: 40px;
     cursor: pointer;
     font-size: 1.2rem;
     color: var(--white);
     font-weight: 600;
     padding: .7rem 2.4rem;
-    transition: .6s ease;
+    transition: .5s ease;
 }
 
-.home .home-btn button:hover {
-    background: var(--hover-color);
+.home .homeContent .home-btn button:hover {
+    background: #FFDBB5;
     color: var(--black);
+    font-size: 1.4rem;
 }
 
 /* Product Page CSS */
@@ -252,7 +227,7 @@ section{
     line-height: 7rem;
     color: var(--white);
     text-shadow: var(--box-shadow);
-    padding-left: 310px;
+    padding-left: 300px;
     position: relative;
     z-index: 2;
 }
@@ -329,7 +304,7 @@ section{
     background: url('backGround.png') no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 7rem 4rem;
+    padding: 4rem 2rem;
 }
 
 .swiper-wrapper {
@@ -359,8 +334,8 @@ section{
     width: 80%;
     max-width: 900px;
     height: auto;
-    margin-top: 40px;
-    margin-left: 120px;
+    margin-top: 50px;
+    margin-left: 110px;
     margin-right: 90px;
     border-radius: 15px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -424,55 +399,28 @@ section{
 }
 
 
+.swiper-pagination-bullet {
+    background: #1E3E62;
+    opacity: 0.3;
+}
+.swiper-pagination-bullet-active {
+    color: #0B192C;
+    opacity: 1;
+}
+
+
 /* Contact Page CSS */
 
 .footer {
     background-color: #BBAB8C;
-}
-
-.footer .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 3.5rem;
-    padding: 2rem 1rem;
-}
-
-.footer .box-container .mainBox .content {
+    padding: 20px 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
-    z-index: 999;
-}
-
-.footer .box-container .mainBox .content h1 {
-    font-size: 2rem;
-    color: var(--black);
-}
-
-.footer .box-container .box h3 {
-    font-size: 1.6rem;
-    color: var(--black);
-    padding: 1rem 0;
-}
-
-.footer .box-container .box a {
-    display: block;
-    font-size: 1.3rem;
-    color: var(--black);
-    padding: 1rem 0;
-}
-.footer .box-container .box a i {
-    padding-right: .5rem;
-    color: #6C4E31;
-    transition: .5s ease;
-}
-
-.footer .box-container .box a:hover i {
-    padding-right: 1.2rem;
 }
 
 .footer .share {
-    padding: .3rem 0;
+    padding: .2rem 0;
     text-align: center;
 }
 
@@ -483,9 +431,11 @@ section{
     font-size: 1.9rem;
     color: var(--black);
     background: var(--white);
+    margin: 0 0.5rem;
     margin: -10px .3rem;
     border-radius: 50%;
     text-decoration: none;
+    transition: background 0.3s, color 0.3s;
 }
 
 .footer .share a:hover {
@@ -495,8 +445,8 @@ section{
 
 .footer .credit {
     font-size: 1.5rem;
-    margin-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    margin-top: 1rem;
     color: var(--black);
     text-align: center;
+    word-wrap: break-word;
 }
