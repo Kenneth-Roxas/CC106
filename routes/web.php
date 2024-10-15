@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Auth\AuthBusiness;
 use App\Livewire\Auth\AuthContact;
 use App\Livewire\Auth\Authhome;
 use App\Livewire\Auth\Authlogin;
@@ -14,3 +15,4 @@ Route::get('/', Authhome::class)->name('home');
 Route::get('/login', Authlogin::class)->name('login');
 Route::get('/contact', AuthContact::class)->name('contact');
 Route::get('/product', AuthProduct::class)->name('product');
+Route::get('/about', AuthBusiness::class)->name('about');

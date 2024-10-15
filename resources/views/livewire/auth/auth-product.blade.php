@@ -12,8 +12,8 @@
             <img src="{{ url('Picture/lanmar.png') }}" alt="logo" class="bakery-img">
             <nav class="navbar">
                 <a href="{{ route('home') }}">Home</a>
-                <a href="">Product</a>
-                <a href="">About</a>
+                <a href="{{route('product')}}">Product</a>
+                <a href="{{route('about')}}">About</a>
                 <a href="{{ route('contact') }}">Contact</a>
                 <span>
             </nav>

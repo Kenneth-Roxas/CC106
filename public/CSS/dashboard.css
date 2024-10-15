@@ -40,7 +40,7 @@ header {
     justify-content: space-between;
     position: fixed;
     padding: 10px 10px;
-    z-index: 999;
+    z-index: 100;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -159,8 +159,13 @@ section {
     margin-bottom: 2rem;
     line-height: 7rem;
     color: var(--white);
-    text-shadow: var(--box-shadow);
-    z-index: 999;
+    text-shadow: 
+    0 0 15px #ff9900,
+    0 0 25px #ff6600,
+    0 0 35px #ff3300,
+    0 0 45px #ff0000
+    ;
+    z-index: 50;
     
 }
 .home .homeContent p{
@@ -168,12 +173,12 @@ section {
     font-size: 2rem;
     line-height: 2rem;
     color: var(--white);
-    z-index: 999;
+    z-index: 50;
 }
 
 .home .homeContent .home-btn {
     height: 3rem;
-    z-index: 999;
+    z-index: 50;
 }
 
 .home .homeContent .home-btn button{
@@ -217,7 +222,7 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 .product-section h2 {
@@ -245,7 +250,7 @@ section{
     flex-direction: column;
     background-color: #FFDBB5;
     text-align: center;
-    border-radius: 40px;
+    border-radius: 25px;
     width: 325px;
     height: 250px;
     position: relative;
@@ -283,6 +288,11 @@ section{
     font-size: 3rem;
     color: var(--white);
     margin-bottom: 15px;
+}
+
+.product-section .content .product-grid .product .image-text p {
+    font-size: 1.5rem;
+    color: var(--white);
 }
 
 .product-section .content .product-grid .product .image-text:hover {
@@ -412,7 +422,7 @@ section{
 /* Contact Page CSS */
 
 .footer {
-    background-color: #BBAB8C;
+    background-color: #C4A484;
     padding: 20px 0;
     display: flex;
     flex-direction: column;
